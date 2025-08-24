@@ -4,12 +4,12 @@ document.getElementById('moneyBtn')
     .addEventListener('click', function(e){
          e.preventDefault()
          const account =document.getElementById('AccountNumber').value;
-         const pin = document.getElementById('valid-Pin')
+         const pin = parseInt(document.getElementById('valid-Pin').value);
          if(account.length !== 11){
              alert('place use valid number')
              return
             }
-         if(pin.number() !== validPin){
+         if(pin !== validPin){
             alert('use valid pin')
             return
          }
