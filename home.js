@@ -58,12 +58,22 @@
       .addEventListener('click', function(){
           document.getElementById('cashOut-container').style.display ='none';
           document.getElementById('addMoney_container').style.display='block';
+         document.getElementById('addMoneyTg').style.backgroundColor = '#0874f20d';
+         document.getElementById('addMoneyTg').style.borderColor = '#0874f2';
+         
+          document.getElementById('cahOutTg').style.backgroundColor = '#ffffff';
+          document.getElementById('cahOutTg').style.borderColor = '#66BB6A';
       })
 
     document.getElementById('cahOutTg')
       .addEventListener('click', function(){
           document.getElementById('addMoney_container').style.display= 'none';
           document.getElementById('cashOut-container').style.display='block';
+          document.getElementById('cahOutTg').style.backgroundColor = '#0874f20d';
+          document.getElementById('cahOutTg').style.borderColor = '#0874f2';
+
+          document.getElementById('addMoneyTg').style.backgroundColor = '#ffffff';
+         document.getElementById('addMoneyTg').style.borderColor = '#66BB6A';
            
       })
   
