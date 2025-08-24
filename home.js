@@ -1,12 +1,20 @@
 //  money add button
+   const validPin = 6581;
 document.getElementById('moneyBtn')
     .addEventListener('click', function(e){
          e.preventDefault()
-          const bank = document.getElementById('sectctBank').value;
-          const account =document.getElementById('bankAccount').value;
-
-          const addAmount =parseInt(document.getElementById('amount').value);
+         const account =document.getElementById('AccountNumber').value;
+         const pin = document.getElementById('valid-Pin')
+         if(account.length !== 11){
+             alert('place use valid number')
+             return
+            }
+         if(pin.number() !== validPin){
+            alert('use valid pin')
+            return
+         }
             
+         const addAmount =parseInt(document.getElementById('amount').value);
 
           const totalAmount = parseInt(document.getElementById('amountCount').innerText)
           
