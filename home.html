@@ -8,7 +8,6 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css link  -->
-     <link rel="stylesheet" href="./style/home.css">
     <!-- daisyUI cdn -->
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
@@ -16,11 +15,12 @@
 </head>
 <body class=" bg-[#f4f5f7] ">
     <!-- header continer  -->
+
     <div class="max-w-lg mx-auto bg-[#ffffff] p-4 rounded-b-3xl">
         <nav class="flex justify-between items-center  ">
             <div class="flex items-center gap-3">
                 <figure>
-                <img class="w-10" src="./assets/Group.png" alt="">
+             addMoney_container   <img class="w-10" src="./assets/Group.png" alt="">
                 </figure>
                 <div>
                 <h2 class="text-2xl font-bold">$<span id="amountCount">45000</span></h2>
@@ -45,17 +45,16 @@
 
      <!-- survice section  -->
       <section class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-7">
-        <div id="btn1" class="  border-2 border-[#66BB6A]  rounded-3xl text-center p-5 min-h-[150px] " >
+        <div id="addMoneyTg" class="  border-2 border-[#66BB6A]  rounded-3xl text-center p-5 min-h-[150px] " >
             <img class="mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Add Money</h2>
         </div>
-        <div id="btn2" class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
+
+        <div id="cahOutTg" class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
             <img class="mx-auto mt-5" src="./assets/send1.png" alt="wallet_png">
-            <h2 class="text-xl font-semibold">Cashout</h2>
+            <h2 class="text-xl font-semibold">Cash Out</h2>
         </div>
         
-        
-
 
         <div class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
             <img class="mx-auto " src="./assets/money1.png" alt="wallet_png">
@@ -79,10 +78,14 @@
 
 
      <!-- add Money from section  -->
-    <div id="addMoney_container" class="max-w-lg mx-auto mt-10">
+
+
+    <div id="addMoney_container" class="max-w-lg mx-auto mt-10 ">
+
         <h1 class="text-[27px] font-bold p-7">Add Money</h1>
 
-        <form action=""  class=" p-7 bg-[#ffffff] rounded-2xl">
+                <form action=""  class=" p-7 bg-[#ffffff] rounded-2xl">
+
             <div >
                 <label for="" class="block font-semibold">Mobile Number</label>
                 <select class="select w-full bg-[#f4f5f7]   rounded-3xl my-3">
@@ -91,10 +94,13 @@
                     <option>BRAC Bank</option>
                     <option>City Bank Bangladesh</option>
                 </select>
+                </div>
+
             <div >
                 <label for="" class="block font-semibold">Bank Account Number</label>
                 <input id="AccountNumber" type="text" placeholder="Enter 11 digit account number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
+
             <div>
                 <label for="" class="block font-semibold">Amount to Add</label>
                 <input id="amount"  type="text" placeholder="Add Amount to withdraw" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
@@ -107,14 +113,40 @@
                 <button id="moneyBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Add Money</button>
             </div>
         </form>
+
     </div>
      
 
     <!-- Cash Out section  -->
    
-<div id="cashOut_container">
-    <h1>hello yousuf</h1>
-</div>
+     <div id="cashOut-container" class="max-w-lg mx-auto mt-10 hidden ">
+
+        <h1 class="text-[27px] font-bold p-7">Cash Out</h1>
+
+                <form action=""  class=" p-7 bg-[#ffffff] rounded-2xl">
+
+            <div >
+                <label for="" class="block font-semibold">Agent Number</label>
+                <input id="cashOutNumber" type="text" placeholder="Enter 11 digit number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+            </div>
+
+            <div>
+                <label for="" class="block font-semibold">Amount</label>
+                <input id="cashOutAmount"  type="text" placeholder="Enter amount to withdraw" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+            </div>
+            <div>
+                <label for="" class="block font-semibold">Pin Number</label>
+                <input id=" " type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+            </div>
+            <div>
+                <button id="cashOutBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Withdraw Money</button>
+            </div>
+        </form>
+
+    </div>
+
+ 
+
 
  
 

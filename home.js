@@ -23,19 +23,47 @@
          document.getElementById('amountCount').innerText = totalAvailableBlanc;   
     })
 
+    //  cash Out maney 
+
+    document.getElementById('cashOutBtn')
+      .addEventListener('click', function(e){
+        e.preventDefault()
+
+         const cashNumber = document.getElementById('cashOutNumber').value;
+         
+         if(cashNumber.length !== 11){
+            alert('use valid number')
+            return
+         }
+
+       const cashAmount =parseInt( document.getElementById('cashOutAmount').value);
+       console.log(cashAmount)
+
+        
+
+      const  cashOutMoney =parseInt(document.getElementById('amountCount').innerText)
+        
+
+       const totalAmountOfAvailableBlanc = cashOutMoney - cashAmount;
+
+       document.getElementById('amountCount').innerText = totalAmountOfAvailableBlanc;
+
+         
+      })
+   
 
 
   
-    document.getElementById('btn1')
+    document.getElementById('addMoneyTg')
       .addEventListener('click', function(){
-          document.getElementById('cashOut_container').style.display ='none';
-          document.getElementById('addMoney_container').style.display='block'
+          document.getElementById('cashOut-container').style.display ='none';
+          document.getElementById('addMoney_container').style.display='block';
       })
 
-    document.getElementById('btn2')
+    document.getElementById('cahOutTg')
       .addEventListener('click', function(){
-          document.getElementById('addMoney_container').style.display ="none";
-          document.getElementById('cashOut_container').style.display='block';
+          document.getElementById('addMoney_container').style.display= 'none';
+          document.getElementById('cashOut-container').style.display='block';
            
       })
   
