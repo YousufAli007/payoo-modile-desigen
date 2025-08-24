@@ -13,9 +13,9 @@
     <!-- tailwind cdn -->
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="h-[100vh] bg-[#f4f5f7] ">
+<body class=" bg-[#f4f5f7] ">
     <!-- header continer  -->
-    <div class="max-w-lg mx-auto bg-[#ffffff] p-7">
+    <div class="max-w-lg mx-auto bg-[#ffffff] p-4 rounded-b-3xl">
         <nav class="flex justify-between items-center  ">
             <div class="flex items-center gap-3">
                 <figure>
@@ -43,35 +43,66 @@
      </section>
 
      <!-- survice section  -->
-      <section class="grid grid-cols-3 gap-3 mt-7">
+      <section class="grid grid-cols-3 gap-2 mt-7">
         <div class="  border-2 border-[#66BB6A]  rounded-3xl text-center p-5 min-h-[150px] " >
-            <img class="mx-auto" src="./assets/wallet1.png" alt="wallet_png">
+            <img class="mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Add Money</h2>
         </div>
 
         <div class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
-            <img class="mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
+            <img class="mx-auto mt-5" src="./assets/send1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Cashout</h2>
         </div>
         <div class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
-            <img class="mx-auto " src="./assets/wallet1.png" alt="wallet_png">
+            <img class="mx-auto " src="./assets/money1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Transfer Moeny</h2>
         </div>
         <div class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
-            <img class="mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
+            <img class="mx-auto mt-5" src="./assets/bonus1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Get Bonus</h2>
         </div>
         <div class=" border-2 border-[#66BB6A]  rounded-3xl   text-center p-5 min-h-[150px]">
-            <img class=" mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
+            <img class=" mx-auto mt-5" src="./assets/purse1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Pay Bil</h2>
         </div>
 
-        <div class=" border-2 border-[#66BB6A]  rounded-3xl   text-center p-5  min-h-[150px] ">
-            <img class="mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
+        <div class=" border-2 border-[#66BB6A]  rounded-3xl   text-center py-5  min-h-[150px] ">
+            <img class="mx-auto mt-5" src="./assets/transaction1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold"> Transactions</h2>
         </div>
       </section>
-
     </div>
+
+     <!-- all from section  -->
+    <div class="max-w-lg mx-auto mt-10">
+        <h1 class="text-[27px] font-bold p-7">Add Money</h1>
+
+        <form action=""  class=" p-7 bg-[#ffffff] rounded-2xl">
+            <div >
+                <label for="" class="block font-semibold">Mobile Number</label>
+                <select class="select w-full bg-[#f4f5f7]   rounded-3xl my-3">
+                    <option disabled selected>Pick a Bank</option>
+                    <option>Dutch-Bangla Bank</option>
+                    <option>BRAC Bank</option>
+                    <option>City Bank Bangladesh</option>
+                </select>
+            <div >
+                <label for="" class="block font-semibold">Bank Account Number</label>
+                <input  type="text" placeholder="Enter 11 digit account number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+            </div>
+            <div>
+                <label for="" class="block font-semibold">Amount to Add</label>
+                <input  type="text" placeholder="Add Amount to withdraw" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+            </div>
+            <div>
+                <label for="" class="block font-semibold">Pin Number</label>
+                <input type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+            </div>
+            <div>
+                <button class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Add Money</button>
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>
