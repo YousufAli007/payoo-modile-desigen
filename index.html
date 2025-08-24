@@ -13,7 +13,7 @@
     <!-- tailwind cdn -->
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class=" h-[90vh] bg-[#f4f5f7] flex justify-center flex-col items-center">
+<body class=" h-[100vh] bg-[#f4f5f7] flex justify-center flex-col items-center">
 
     <div class="w-[350px] bg-[url(./assets/bg.png)] bg-cover">
         <img src="./assets/Group.png" class="mx-auto my-10" alt="">
@@ -22,13 +22,13 @@
         <div>
             <label for="" class="text-[20px] font-bold">Mobile Number</label>
             <br>
-            <input type="text" placeholder="Enter your number" class="input py-6 rounded-3xl my-3" />
+            <input id="input_Number" type="text" placeholder="Enter your number" class="input py-6 rounded-3xl my-3" />
         </div>
         <div>
             <label for="" class="text-[20px] font-bold">4 Digit Pin</label>
-            <input type="text" placeholder="Enter 4 Digit Pin" class="input py-6 rounded-3xl my-3" />
+            <input id="input_pin" type="text" placeholder="Enter 4 Digit Pin" class="input py-6 rounded-3xl my-3" />
         </div>
-         <button class="btn text-[20px] text-white  w-full bg-[#0874F2] py-6 rounded-3xl">Login</button>
+         <button id="updateBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-6 rounded-3xl">Login</button>
      </form>
     <script src="./script.js"></script>
 </body>
