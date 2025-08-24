@@ -6,8 +6,9 @@
     <title>home</title>
     <!-- font awesome cnd  -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- css link  -->
-     <link rel="stylesheet" href="./style/style.css">
+     <link rel="stylesheet" href="./style/home.css">
     <!-- daisyUI cdn -->
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
@@ -22,13 +23,13 @@
                 <img class="w-10" src="./assets/Group.png" alt="">
                 </figure>
                 <div>
-                <h2 class="text-2xl font-bold">$ <span>45000</span></h2>
+                <h2 class="text-2xl font-bold">$<span id="amountCount">45000</span></h2>
                  <p class="text-[#08080880]">Available Balance</p>
                 </div>
             </div>
 
             <div>
-                <button class="btn  border-2 border-gray-500  "> <i class="fa-solid fa-arrow-right-from-bracket -rotate-180"></i>Log Out</button>
+                <button id="logOut" class="btn  border-2 border-gray-500  "> <i class="fa-solid fa-arrow-right-from-bracket -rotate-180"></i>Log Out</button>
             </div>
     </nav>
     <hr class="text-gray-300">
@@ -80,29 +81,31 @@
         <form action=""  class=" p-7 bg-[#ffffff] rounded-2xl">
             <div >
                 <label for="" class="block font-semibold">Mobile Number</label>
-                <select class="select w-full bg-[#f4f5f7]   rounded-3xl my-3">
-                    <option disabled selected>Pick a Bank</option>
+                <select id="sectctBank" class="select w-full bg-[#f4f5f7]   rounded-3xl my-3">
+                    <option disabled selected>Pick Bank</option>
                     <option>Dutch-Bangla Bank</option>
                     <option>BRAC Bank</option>
                     <option>City Bank Bangladesh</option>
                 </select>
             <div >
                 <label for="" class="block font-semibold">Bank Account Number</label>
-                <input  type="text" placeholder="Enter 11 digit account number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="bankAccount" type="text" placeholder="Enter 11 digit account number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
             <div>
                 <label for="" class="block font-semibold">Amount to Add</label>
-                <input  type="text" placeholder="Add Amount to withdraw" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="amount"  type="text" placeholder="Add Amount to withdraw" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
             <div>
                 <label for="" class="block font-semibold">Pin Number</label>
                 <input type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
             <div>
-                <button class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Add Money</button>
+                <button id="moneyBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Add Money</button>
             </div>
         </form>
     </div>
+ 
 
+    <script src="./home.js"></script>
 </body>
 </html>
