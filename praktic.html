@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>praktic</title>
+</head>
+<body>
+
+    <h1 id="getS">5000</h1>
+    <h1 id="getM">10000</h1>
+    <h1 id="hello">0</h1>
+    <button id="1">button2</button>
+    <button  id="2">button1</button>
+     
+
+
+    <script>
+        function number(id){
+            const hm =document.getElementById('hello');
+           hm.innerText = id
+        }
+        
+         
+        document.getElementById('1')
+        .addEventListener('click', function(){
+            number('1')
+        })
+        document.getElementById('2')
+        .addEventListener('click', function(){
+            number('2')
+        })
+
+         
+    </script>
+</body>
+</html>

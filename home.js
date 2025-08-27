@@ -1,10 +1,62 @@
 //  money add button
    const validPin = 6581;
+
+   const transactionData =[];
+
+   // a function the get value input in number 
+   function inputNum(id){
+      const inputValue =document.getElementById(id);
+      const inputValueNum =inputValue.value;
+      const inputValueNumber =parseInt(inputValueNum);
+       return inputValueNumber;
+   }
+
+//  function get number 
+   function inputValue(id){
+      const inputValue =document.getElementById(id);
+      const inputValueNumber =inputValue.value;
+      return inputValueNumber;
+   }
+   //  function get innerText in number 
+   function innerText(getBlanc){
+       const availableBlanc =document.getElementById('amountCount');
+       availableBlanc.innerText = getBlanc;
+   }
+
+   // function Toggling
+
+   function togglingId(id){
+       const forms =document.getElementsByClassName('form');
+
+        for(const justForm of forms){
+          justForm.style.display ='none';
+        }
+        document.getElementById(id).style.display ='block'
+   }
+
+
+
+   // function toggling card-backgroundColor
+
+   function bgColor(id){
+      const forms =document.getElementsByClassName('gard');
+      for (const justForm of forms){
+         justForm.style.backgroundColor = '#ffffff';
+         justForm.style.borderColor = '#66BB6A';
+      }
+      document.getElementById(id).style.backgroundColor = '#0874f20d';
+      document.getElementById(id).style.borderColor = '#0874f2';
+   }
+
+
    document.getElementById('moneyBtn')
     .addEventListener('click', function(e){
          e.preventDefault()
-         const account =document.getElementById('AccountNumber').value;
-         const pin = parseInt(document.getElementById('valid-Pin').value);
+         const account = inputValue('AccountNumber');;
+
+         const pin = inputNum('valid-Pin')
+
+
          if(account.length !== 11){
              alert('place use valid number')
              return
@@ -14,13 +66,20 @@
             return
          }
             
-         const addAmount =parseInt(document.getElementById('amount').value);
+         const addAmount = inputNum('amount')
 
           const totalAmount = parseInt(document.getElementById('amountCount').innerText)
           
-         const totalAvailableBlanc =totalAmount + addAmount;
+          const totalAvailableBlanc =totalAmount + addAmount;
           
-         document.getElementById('amountCount').innerText = totalAvailableBlanc;   
+          innerText(totalAvailableBlanc); 
+          
+          const transactionValue ={
+            name:'Add Moeny',
+            date:new Date().toLocaleTimeString()
+          }
+          transactionData.push(transactionValue);
+          
     })
 
     //  cash Out maney 
@@ -28,27 +87,35 @@
     document.getElementById('cashOutBtn')
       .addEventListener('click', function(e){
         e.preventDefault()
+          const pin = inputNum('cashout_pin')
 
-         const cashNumber = document.getElementById('cashOutNumber').value;
+         const cashNumber = inputValue('cashOutNumber');
          
          if(cashNumber.length !== 11){
             alert('use valid number')
             return
          }
+          if(pin !== validPin){
+            alert('use valid pin')
+            return
+         }
 
-       const cashAmount =parseInt( document.getElementById('cashOutAmount').value);
-       console.log(cashAmount)
-
-        
-
+       const cashAmount = inputNum('cashOutAmount');
+   
       const  cashOutMoney =parseInt(document.getElementById('amountCount').innerText)
         
 
        const totalAmountOfAvailableBlanc = cashOutMoney - cashAmount;
 
-       document.getElementById('amountCount').innerText = totalAmountOfAvailableBlanc;
+        innerText(totalAmountOfAvailableBlanc); 
 
+          const transactionValue ={
+            name:'Cash Out',
+            date:new Date().toLocaleTimeString()
+          }
+          transactionData.push(transactionValue)
          
+ 
       })
    
 
@@ -58,13 +125,34 @@
       document.getElementById('PayBilBtn')
          .addEventListener('click', function(e){
             e.preventDefault()
-             const payAmountBill= parseInt(document.getElementById('payAmount').value);
+             const pin = inputNum('pay-pin');
+
+         const cashNumber =  inputValue('pay-number');
+         
+         if(cashNumber.length !== 11){
+            alert('use valid number')
+            return
+         }
+          if(pin !== validPin){
+            alert('use valid pin')
+            return
+         }
+             const payAmountBill=inputNum('payAmount');
 
              const afterPayBilBlanc =parseInt(document.getElementById('amountCount').innerText);
+
              const payBilAvailableBlanc = afterPayBilBlanc - payAmountBill;
+
              console.log(payBilAvailableBlanc)
 
-             document.getElementById('amountCount').innerText = payBilAvailableBlanc;
+             innerText(payBilAvailableBlanc);
+             
+            const transactionValue ={
+            name:' Pay Bil',
+            date:new Date().toLocaleTimeString()
+          }
+          transactionData.push(transactionValue)
+         
          })
 
 
@@ -72,58 +160,92 @@
           document.getElementById('transferBtn')
       .addEventListener('click', function(e){
          e.preventDefault()
-          const transferTotalAmount =parseInt(document.getElementById('transferAmount').value)
+
+         const pin = inputNum('transfer-pin');
+
+         const cashNumber = inputValue('transfer_number');
+         
+         if(cashNumber.length !== 11){
+            alert('use valid number')
+            return
+         }
+          if(pin !== validPin){
+            alert('use valid pin')
+            return
+         }
+
+          const transferTotalAmount = inputNum('transferAmount')
           
           const transferAllAmount = parseInt(document.getElementById('amountCount').innerText);
           const transferAvailableBlanc = transferAllAmount - transferTotalAmount;
-          document.getElementById('amountCount').innerText = transferAvailableBlanc;
+         innerText(transferAvailableBlanc);  
+          const transactionValue ={
+            name:' Transfer Moeny',
+            date:new Date().toLocaleTimeString()
+          }
+          transactionData.push(transactionValue)
+         
          
 
       })
+
+
+
+      // Transactions 
+      document.getElementById('transactionTG')
+         .addEventListener('click', function(){
+            const transactionContainer =document.getElementById('transactions-container')
+
+            transactionContainer.innerText ='';
+            for(const data of transactionData){
+               const div =document.createElement('div');
+
+               div.innerHTML=`
+               <div class="flex  justify-between items-center bg-[#ffffff] p-2 rounded-xl mb-5">
+            <div class="flex items-center gap-3">
+                <figure class="w-[45px] bg-[#0808080d] rounded-full py-2">
+                    <img class="mx-auto" src="./assets/wallet1.png" alt="">
+                </figure>
+                <div>
+                    <h3 class="text-[20px] font-semibold">${data.name}</h3>
+                    <p class="text-[#080808b3]">${data.date}</p>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-ellipsis-vertical text-[#08080880] "></i>
+            </div>
+        </div>
+               `
+               transactionContainer.appendChild(div)
+            
+            }
+            
+
+         })
       
 
-//   Tggle
+//   Toggle
     document.getElementById('addMoneyTg')
       .addEventListener('click', function(){
-          document.getElementById('cashOut-container').style.display ='none';
-          document.getElementById('transfer_container').style.display='none';
-          document.getElementById('bonus_container').style.display='none';
-
-          document.getElementById('addMoney_container').style.display='block';
-
-         // document.getElementById('addMoneyTg').style.backgroundColor = '#0874f20d';
-         // document.getElementById('addMoneyTg').style.borderColor = '#0874f2';
-
-         //  document.getElementById('cahOutTg').style.backgroundColor = '#ffffff';
-         //  document.getElementById('cahOutTg').style.borderColor = '#66BB6A';
+       togglingId('addMoney_container');
+       bgColor('addMoneyTg')
       })
+
 
     document.getElementById('cahOutTg')
       .addEventListener('click', function(){
-          document.getElementById('addMoney_container').style.display= 'none';
-
-          document.getElementById('transfer_container').style.display='none';
-          document.getElementById('bonus_container').style.display='none';
-          
-          document.getElementById('cashOut-container').style.display='block';
-
-
-         //  document.getElementById('cahOutTg').style.backgroundColor = '#0874f20d';
-         //  document.getElementById('cahOutTg').style.borderColor = '#0874f2';
-
-         //  document.getElementById('addMoneyTg').style.backgroundColor = '#ffffff';
-         // document.getElementById('addMoneyTg').style.borderColor = '#66BB6A';
+          togglingId('cashOut-container')
+          bgColor('cahOutTg')
            
       })
 
       document.getElementById('transferMoneyTg')
          .addEventListener('click', function(){
-         document.getElementById('addMoney_container').style.display='none';
+          
+         togglingId('transfer_container');
+         bgColor('transferMoneyTg');
 
-         document.getElementById('cashOut-container').style.display='none';
-         document.getElementById('bonus_container').style.display='none';
-         document.getElementById('transfer_container').style.display='block';
-            
          })
 
 
@@ -131,11 +253,9 @@
           
          document.getElementById('getBonus')
             .addEventListener('click', function(){
-         document.getElementById('addMoney_container').style.display='none';
-
-         document.getElementById('cashOut-container').style.display='none';
-         document.getElementById('transfer_container').style.display='none';
-         document.getElementById('bonus_container').style.display='block';
+         
+         togglingId('bonus_container');
+         bgColor('getBonus');
 
 
             })
@@ -145,11 +265,9 @@
 
             document.getElementById('payBillTG')
                .addEventListener('click', function(){
-         document.getElementById('addMoney_container').style.display='none';
-         document.getElementById('cashOut-container').style.display='none';
-         document.getElementById('transfer_container').style.display='none';
-         document.getElementById('bonus_container').style.display='none';
-         document.getElementById('payBill_container').style.display='block';
+         
+         togglingId('payBill_container');
+         bgColor('payBillTG');
 
              })
 
@@ -157,20 +275,15 @@
             //  transactionTg
             document.getElementById('transactionTG')
                .addEventListener('click', function(){
-         document.getElementById('addMoney_container').style.display='none';
-         document.getElementById('cashOut-container').style.display='none';
-         document.getElementById('transfer_container').style.display='none';
-         document.getElementById('bonus_container').style.display='none';
-         document.getElementById('payBill_container').style.display='none';
-         document.getElementById('transactions-container').style.display='block';
+         
+         togglingId('transactions-container');
+         bgColor('transactionTG');
                })
 
 
 
 
-
-
-
+ 
 
 
 

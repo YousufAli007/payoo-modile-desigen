@@ -46,32 +46,32 @@
 
      <!-- survice section  -->
       <section class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-7">
-        <div id="addMoneyTg" class="  border-2 border-[#66BB6A]  rounded-3xl text-center p-5 min-h-[150px] " >
+        <div id="addMoneyTg" class=" gard border-2 border-[#66BB6A]  rounded-3xl text-center p-5 min-h-[150px] " >
             <img class="mx-auto mt-5" src="./assets/wallet1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Add Money</h2>
         </div>
 
-        <div id="cahOutTg" class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
+        <div id="cahOutTg" class=" gard min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
             <img class="mx-auto mt-5" src="./assets/send1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Cash Out</h2>
         </div>
         
 
-        <div id="transferMoneyTg" class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
+        <div id="transferMoneyTg" class=" gard min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
             <img class="mx-auto " src="./assets/money1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Transfer Moeny</h2>
         </div>
 
-        <div id="getBonus" class=" min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
+        <div id="getBonus" class=" gard min-h-[150px] border-2 border-[#66BB6A]  rounded-3xl   text-center p-5">
             <img class="mx-auto mt-5" src="./assets/bonus1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Get Bonus</h2>
         </div>
-        <div id="payBillTG" class=" border-2 border-[#66BB6A]  rounded-3xl   text-center p-5 min-h-[150px]">
+        <div id="payBillTG" class=" gard border-2 border-[#66BB6A]  rounded-3xl   text-center p-5 min-h-[150px]">
             <img class=" mx-auto mt-5" src="./assets/purse1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold">Pay Bil</h2>
         </div>
 
-        <div id="transactionTG" class=" border-2 border-[#66BB6A]  rounded-3xl   text-center py-5  min-h-[150px] ">
+        <div id="transactionTG" class=" gard border-2 border-[#66BB6A]  rounded-3xl   text-center py-5  min-h-[150px] ">
             <img class="mx-auto mt-5" src="./assets/transaction1.png" alt="wallet_png">
             <h2 class="text-xl font-semibold"> Transactions</h2>
         </div>
@@ -82,7 +82,7 @@
      <!-- add Money from section  -->
 
 
-    <div id="addMoney_container" class="max-w-lg mx-auto mt-10  py-10">
+    <div id="addMoney_container" class="form max-w-lg mx-auto mt-10  py-10">
 
         <h1 class="text-[27px] font-bold p-7">Add Money</h1>
 
@@ -121,7 +121,7 @@
 
     <!-- Cash Out section  -->
    
-     <div id="cashOut-container" class="max-w-lg mx-auto mt-10 py-10 hidden ">
+     <div id="cashOut-container" class="form max-w-lg mx-auto mt-10 py-10 hidden ">
 
         <h1 class="text-[27px] font-bold p-7">Cash Out</h1>
 
@@ -138,7 +138,7 @@
             </div>
             <div>
                 <label for="" class="block font-semibold">Pin Number</label>
-                <input id=" " type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="cashout_pin" type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
             <div>
                 <button id="cashOutBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Withdraw Money</button>
@@ -151,7 +151,7 @@
       <!-- Transfer Money  -->
 
 
-     <div id="transfer_container" class="max-w-lg mx-auto mt-10 py-10 hidden">
+     <div id="transfer_container" class="form max-w-lg mx-auto mt-10 py-10 hidden ">
 
         <h1 class="text-[27px] font-bold p-7">Transfer Money</h1>
 
@@ -159,7 +159,7 @@
 
             <div >
                 <label for="" class="block font-semibold">User Account Number</label>
-                <input id="" type="text" placeholder="Enter 11 digit number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="transfer_number" type="text" placeholder="Enter 11 digit number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
 
             <div>
@@ -168,7 +168,7 @@
             </div>
             <div>
                 <label for="" class="block font-semibold">Pin Number</label>
-                <input id=" " type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="transfer-pin" type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
             <div>
                 <button id="transferBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Send Now</button>
@@ -179,7 +179,7 @@
 
 
     <!-- Get Bonus  -->
-      <div id="bonus_container" class="max-w-lg mx-auto mt-10 hidden py-10 ">
+      <div id="bonus_container" class="form max-w-lg mx-auto mt-10 hidden py-10 ">
 
         <h1 class="text-[27px] font-bold p-7">Get Bonus</h1>
 
@@ -199,7 +199,7 @@
 
 
     <!-- pay Bil -->
-      <div id="payBill_container" class="max-w-lg mx-auto mt-10  py-10  hidden">
+      <div id="payBill_container" class="form max-w-lg mx-auto mt-10  py-10  hidden">
 
         <h1 class="text-[27px] font-bold p-7">Pay Bill</h1>
 
@@ -217,7 +217,7 @@
 
             <div >
                 <label for="" class="block font-semibold">Biller Account Number</label>
-                <input id="" type="text" placeholder="Enter account number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="pay-number" type="text" placeholder="Enter account number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
 
             <div>
@@ -226,7 +226,7 @@
             </div>
             <div>
                 <label for="" class="block font-semibold">Pin Number</label>
-                <input id="valid-Pin" type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
+                <input id="pay-pin" type="text" placeholder="Enter 4 digit pin number" class="input py- rounded-3xl  bg-[#f4f5f7]  my-3 w-full" />
             </div>
             <div>
                 <button id="PayBilBtn" class="btn text-[20px] text-white  w-full bg-[#0874F2] py-5 rounded-3xl mt-5">Pay Now</button>
@@ -238,74 +238,14 @@
 
     <!-- transactions  -->
 
-    <div id="transactions-container" class="max-w-lg mx-auto mt-10  py-10 hidden">
+    <div id="transactions-container" class="form max-w-lg mx-auto mt-10  py-10 hidden">
         <div class="flex items-center justify-between">
             <h2 class="text-[27px] font-bold p-7">Transaction History</h2>
             <p class="text-[#08080880]">View All</p>
         </div>
 
-        <div class="flex  justify-between items-center bg-[#ffffff] p-2 rounded-xl mb-5">
-            <div class="flex items-center gap-3">
-                <figure class="w-[45px] bg-[#0808080d] rounded-full py-2">
-                    <img class="mx-auto" src="./assets/wallet1.png" alt="">
-                </figure>
-                <div>
-                    <h3 class="text-[20px] font-semibold">Electricity Bill</h3>
-                    <p class="text-[#080808b3]">Today 01:44 AM</p>
-                </div>
-            </div>
+ 
 
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical text-[#08080880] "></i>
-            </div>
-        </div>
-        <div class="flex  justify-between items-center bg-[#ffffff] p-2 rounded-xl mb-5">
-            <div class="flex items-center gap-3">
-                <figure class="w-[45px] bg-[#0808080d] rounded-full py-2">
-                    <img class="mx-auto" src="./assets/wallet1.png" alt="">
-                </figure>
-                <div>
-                    <h3 class="text-[20px] font-semibold">Bank Deposit</h3>
-                    <p class="text-[#080808b3]">Today 01:44 AM</p>
-                </div>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical text-[#08080880] "></i>
-            </div>
-        </div>
-
-        <div class="flex  justify-between items-center bg-[#ffffff] p-2 rounded-xl mb-5">
-            <div class="flex items-center gap-3">
-                <figure class="w-[45px] bg-[#0808080d] rounded-full py-2">
-                    <img class="mx-auto" src="./assets/wallet1.png" alt="">
-                </figure>
-                <div>
-                    <h3 class="text-[20px] font-semibold">Mobile Recharge</h3>
-                    <p class="text-[#080808b3]">Today 01:44 AM</p>
-                </div>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical text-[#08080880] "></i>
-            </div>
-        </div>
-
-        <div class="flex  justify-between items-center bg-[#ffffff] p-2 rounded-xl mb-5">
-            <div class="flex items-center gap-3">
-                <figure class="w-[45px] bg-[#0808080d] rounded-full py-2">
-                    <img class="mx-auto" src="./assets/wallet1.png" alt="">
-                </figure>
-                <div>
-                    <h3 class="text-[20px] font-semibold">Gas Bill</h3>
-                    <p class="text-[#080808b3]">Today 01:44 AM</p>
-                </div>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-ellipsis-vertical text-[#08080880] "></i>
-            </div>
-        </div>
 
     </div>
  
